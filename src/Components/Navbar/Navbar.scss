@@ -1,0 +1,61 @@
+@import "../../styles/variables.scss";
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: $dark-color;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-color;
+
+    border-bottom: 1px solid $bit-darker-color;
+
+    .nav-brand {
+        user-select: none;
+
+        .logo {
+            width: 40px;
+            /* Set a fixed width for the logo */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 0.5rem;
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 13px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgba($primary-color, 0.13);
+                color: $primary-color;
+
+            }
+
+            &.active {
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+}

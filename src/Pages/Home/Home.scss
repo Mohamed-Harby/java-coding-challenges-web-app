@@ -1,0 +1,99 @@
+@import "../../styles/variables.scss";
+
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+  .logo-in-home {
+    width: 200px;
+    margin: 2.2rem 0;
+    align-self: center;
+
+  }
+
+  .quote-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 128px;
+
+    .animated-text {
+      font-size: 1.2rem;
+      color: $text-color;
+      text-align: start;
+      min-height: 64px;
+      max-height: 64px;
+      overflow: hidden;
+
+      &::after {
+        content: '|';
+        position: relative;
+        margin-left: 2px;
+        animation: blink 1s infinite;
+        color: $primary-color;
+      }
+    }
+
+    .quote-author {
+      position: absolute;
+      bottom: -24px;
+      right: 0;
+      font-size: 0.9rem;
+      color: rgba($color: $primary-color, $alpha: 1);
+      font-style: italic;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cta-buttons {
+    a {
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+
+      &.start-quiz-btn {
+        background-color: rgba($color: $primary-color, $alpha: .2);
+        color: $primary-color;
+        padding: 10px 15px;
+
+        &:hover {
+          background-color: rgba($color: $primary-color, $alpha: 1);
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
